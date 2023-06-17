@@ -1,1 +1,10 @@
-d
+local placeId = 'https://raw.githubusercontent.com/DawnnOfTheDead/R/tree/main/games/'.. game.PlaceId
+local found, notFound = pcall(function()
+	game:HttpGet(placeId)
+end)
+
+if placeId and found then
+			   loadstring(game:HttpGet(placeId, true))()
+else
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/DawnnOfTheDead/R/main/games/unknown', true))()
+end
